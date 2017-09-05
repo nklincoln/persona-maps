@@ -1,0 +1,49 @@
+@import '../../../assets/styles/base/_colors.scss';
+@import '../../../assets/styles/base/_variables.scss';
+
+file-importer {
+    display: flex;
+    flex-direction: column;
+
+    border: 1px solid transparent;
+    margin: 0;
+    vertical-align: middle;
+    font-size: 0.9rem;
+    font-weight: 400;
+    overflow: hidden;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    line-height: 40px;
+    background-color: $white;
+    color: $first-highlight;
+    border-color: $keyline-highlight;
+
+    .underline {
+        text-decoration: underline;
+    }
+
+    @include transition(all);
+
+    input[type=file] {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        opacity: 0;
+        cursor: pointer;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: $second-highlight;
+        border-color: $second-highlight;
+        color: $white;
+    }
+
+}
+
+
+

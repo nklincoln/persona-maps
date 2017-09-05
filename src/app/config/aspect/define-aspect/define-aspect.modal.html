@@ -1,0 +1,41 @@
+<div class="define-aspect">
+    <div class="modal-header">Add Aspect
+    <button class="icon modal-exit" (click)="activeModal.close(false)">X</button>
+  </div>
+    <section class="modal-body">
+      <form>
+        <div class="confidence-select">
+          <div class="confidence-title">
+            <label for="name"><h3>Name</h3></label>
+          </div>
+          <div class="confidence-item">
+            <input required type="text" [(ngModel)]="name" id="name" name="name" autocomplete="off">
+          </div>
+        </div>
+        <div class="confidence-select">
+            <div class="confidence-title">
+                <h3>Confidence</h3>
+            </div>
+            <div class="confidence-item">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="action" id="dropdownMenu1" ngbDropdownToggle><span
+                      title="{{confidence}}">{{confidence}}</span></button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <button class="dropdown-item action" *ngFor="let value of confidenceValues"
+                              (click)="onConfidenceSelect(value)">{{value}}
+                      </button>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </form>
+    </section>
+    <div class="footer">
+      <button type="button" class="secondary" (click)="activeModal.close(false);">
+        <span>Cancel</span>
+      </button>
+      <button type="button" class="primary" (click)="process();" [disabled]="!validContents()">
+        <span>OK</span>
+      </button>
+    </div>
+</div>

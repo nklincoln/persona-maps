@@ -1,0 +1,24 @@
+<section class = "data-config">
+  <div class="item-definition">
+    <div class="title">Defined Aspects</div>
+    <div class="aspect">
+      <div *ngFor="let aspect of aspects" class="aspects">
+        <div class="name">{{aspect.getName()}}</div>
+        <div>{{aspect.getConfidence()}}</div>
+        <div>
+          <button type="button" class="secondary" (click)="deleteAspect(aspect);">
+            <span>Delete</span>
+          </button>
+          <button type="button" class="secondary" (click)="replaceAspect(aspect);">
+            <span>Edit</span>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="footer">
+      <button type="button" class="primary" (click)="addAspect();">
+        <span>Add</span>
+      </button>
+    </div>
+  </div>
+</section>

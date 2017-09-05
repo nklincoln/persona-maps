@@ -1,0 +1,29 @@
+<header>
+  <div class="text">
+    Persona Confidence Maps
+  </div>
+</header>
+<nav>
+	<a [routerLink]="['/']">
+    <button type="button" class="secondary" (click)="setMaps();">
+      <span>Maps</span>
+    </button>
+  </a>
+	<a [routerLink]="['/aspect-config']">
+    <button type="button" class="secondary" (click)="setAspectConfig();">
+      <span>Aspects</span>
+    </button>
+  </a>
+  <a [routerLink]="['/persona-config']">
+    <button type="button" class="secondary" (click)="setPersonaConfig();">
+      <span>Personas</span>
+    </button>
+  </a>
+  <div class="option-text">
+    {{currentOption}}
+  </div>
+</nav>
+
+<main>
+	<router-outlet></router-outlet>
+</main>

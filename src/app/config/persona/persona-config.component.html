@@ -1,0 +1,43 @@
+
+<section class = "data-config">
+
+  <div class="item-definition">
+    <div class="title">Defined Personas</div>
+    <div class="persona-config">
+      <div class="personas" *ngFor="let persona of personas">
+        <h3>{{ persona.getName() }}</h3>
+        <div>
+          <button type="button" class="secondary" (click)="deletePersona(persona);">
+            <span>Delete</span>
+          </button>
+          <button type="button" class="secondary" (click)="viewPersona(persona);">
+            <span>View</span>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="primary" (click)="addPersona();">
+        <span>Add Persona</span>
+      </button>
+    </div>
+    <div *ngIf="selectedPersona" class="persona-aspects">
+      <div class="persona-name">
+        {{selectedPersona.getName()}} Aspect Weightings
+      </div>
+      <div class="item" *ngFor="let personaAspect of selectedPersona.getPersonaAspects()">
+        <div class="name">{{personaAspect.getAspect().getName()}}</div>
+        <div>{{personaAspect.getWeighting()}}</div>
+        <div>
+          <button type="button" class="secondary" (click)="removePersonaAspect(personaAspect);">
+            <span>Delete</span>
+          </button>
+          <button type="button" class="secondary" (click)="editPersonaAspect(personaAspect);">
+            <span>Edit</span>
+          </button>
+        </div>
+      </div>
+      <button type="button" class="primary" (click)="addPersonaAspect();">
+        <span>Add Persona Aspect</span>
+      </button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,25 @@
+<div class="new-persona">
+    <div class="modal-header">Add Persona
+    <button class="icon modal-exit" (click)="activeModal.close(false)">X</button>
+  </div>
+    <section class="modal-body">
+      <form>
+        <div class="confidence-select">
+          <div class="confidence-title">
+            <label for="name"><h3>Name</h3></label>
+          </div>
+          <div class="confidence-item">
+            <input required type="text" [(ngModel)]="name" id="name" name="name" autocomplete="off">
+          </div>
+        </div>
+      </form>
+    </section>
+    <div class="footer">
+      <button type="button" class="secondary" (click)="activeModal.close(false);">
+        <span>Cancel</span>
+      </button>
+      <button type="button" class="primary" (click)="process();" [disabled]="!validContents()">
+        <span>OK</span>
+      </button>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+@import '../../../../assets/styles/base/colors';
+@import '../../../../assets/styles/base/variables';
+
+.define-aspect {
+  display: flex;
+  flex-direction: column;
+
+  .footer{
+    display:flex;
+    margin-left: auto;
+    padding: 1rem;
+  }
+
+  .confidence-select{
+    display: flex;
+    color:$secondary-text;
+    align-content: flex-start;
+    align-items: center;
+
+    .confidence-title{
+      display: flex;
+      min-width: 5rem;
+    }
+
+    .confidence-item{
+      display: flex;
+      margin: auto 1rem;
+    }
+  }
+}

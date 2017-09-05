@@ -1,0 +1,32 @@
+@import '../assets/styles/base/colors';
+@import '../assets/styles/base/variables';
+
+header {
+  display: flex;
+  align-items: center;
+  background-color: $second-highlight;
+  min-height: 5rem;
+  color: ghostwhite;
+
+  .text {
+    display: flex;
+    padding-left: 2rem;
+    font-size: 30pt;
+  }
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  background-color: steelblue;
+  min-height: 2rem;
+  color: ghostwhite;
+
+  .option-text{
+    padding-left: 2rem;
+  }
+}
+
+h1 {
+  border-bottom: 2px solid grey;
+}

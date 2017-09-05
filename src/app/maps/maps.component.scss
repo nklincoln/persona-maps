@@ -1,0 +1,43 @@
+@import '../../assets/styles/base/colors';
+@import '../../assets/styles/base/variables';
+
+.container {
+  display: flex;
+  background: lightgray;
+  flex-wrap: wrap;
+
+  .side-options{
+    display: flex;
+    flex-direction: column;
+    padding-right: 0.5rem;
+    padding-top: 0.5rem;
+  }
+
+  .persona-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: ghostwhite;
+    margin-left: 2rem;
+    margin-top: 2rem;
+    border-radius: 5px;
+
+    .name {
+      display: flex;
+      align-items: center;
+      font-size: 20pt;
+    }
+
+    .map {
+      display: flex;
+
+      .content {
+        min-height: 30rem;
+        min-width: 30rem;
+      }
+    }
+
+  }
+
+
+}

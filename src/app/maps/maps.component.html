@@ -1,0 +1,22 @@
+<section class="container">
+    <div class="side-options">
+       <div>
+        <file-importer (fileAccepted)="fileAccepted($event)"
+                       (fileRejected)="fileRejected($event)"
+                       [supportedFileTypes]="[fileExt]">
+        </file-importer>
+        <button type="button" class="secondary" (click)="export();">
+          <span>Export</span>
+        </button>
+      </div>
+    </div>
+    <div class="persona-details" *ngFor="let persona of personas; let i= index">
+      <div class="name">{{persona.getName()}}</div>
+      <div *ngIf="mapPersona(i)"class="map">
+        <treemap class="content"
+          [data]="data[i]"
+          [scheme]="scheme[i]">
+        </treemap>
+      </div>
+    </div>
+</section>

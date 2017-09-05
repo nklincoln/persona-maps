@@ -1,0 +1,52 @@
+<div class="persona-aspect">
+    <div class="modal-header">Edit Persona Aspect
+    <button class="icon modal-exit" (click)="activeModal.close(false)">X</button>
+  </div>
+    <section class="modal-body">
+      <form>
+        <div class="aspect-select">
+            <div class="aspect-title">
+                <h3>Aspect</h3>
+            </div>
+            <div *ngIf="isNew" class="aspect-item">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="action" id="dropdownMenu1" ngbDropdownToggle><span
+                      title="{{aspect.getName()}}">{{aspect.getName()}}</span></button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <button class="dropdown-item action" *ngFor="let aspect of aspects"
+                              (click)="onAspectSelect(aspect)">{{aspect.getName()}}
+                      </button>
+                  </div>
+              </div>
+            </div>
+            <div *ngIf="!isNew" class="aspect-item">
+               <h3>{{personaAspect.getAspect().getName()}}</h3>
+            </div>
+        </div>
+        <div class="aspect-select">
+            <div class="aspect-title">
+                <h3>Weighting</h3>
+            </div>
+            <div class="aspect-item">
+                <div ngbDropdown class="d-inline-block">
+                  <button type="button" class="action" id="dropdownMenu1" ngbDropdownToggle><span
+                      title="{{weighting}}">{{weighting}}</span></button>
+                  <div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+                      <button class="dropdown-item action" *ngFor="let value of weightingValues"
+                              (click)="onWeightingSelect(value)">{{value}}
+                      </button>
+                  </div>
+              </div>
+            </div>
+        </div>
+      </form>
+    </section>
+    <div class="footer">
+      <button type="button" class="secondary" (click)="activeModal.close(false);">
+        <span>Cancel</span>
+      </button>
+      <button type="button" class="primary" (click)="process();" [disabled]="!validContents()">
+        <span>OK</span>
+      </button>
+    </div>
+</div>

@@ -64,8 +64,33 @@ describe('PersonaAspectModal', () => {
 
       component.ngOnInit();
 
-      component['weighting'].should.equal(0);
+      component['weighting'].should.equal(1);
       component['aspect'].should.deep.equal(aspect);
+    });
+
+    it('should use the first retrieved aspect and a default weighting if no PersonaAspect present', () => {
+      let aspect = new Aspect('testAspect', 3);
+      testAspectService.addAspect(aspect);
+
+      component.ngOnInit();
+
+      component['weighting'].should.equal(1);
+      component['aspect'].should.deep.equal(aspect);
+    });
+
+    it('should remove any existing aspects that have been selected from the options', () => {
+      let aspect0 = new Aspect('testAspect0', 3);
+      let aspect1 = new Aspect('testAspect1', 4);
+      let aspect2 = new Aspect('testAspect2', 5);      
+      testAspectService.addAspects([aspect0, aspect1, aspect2]);
+
+      component['existingPersonaAspects'] = [new PersonaAspect(aspect1, 9)];
+
+      component.ngOnInit();
+
+      component['aspects'].length.should.be.equal(2);
+      component['aspects'][0].should.be.deep.equal(aspect0);
+      component['aspects'][1].should.be.deep.equal(aspect2);
     });
   });
 
@@ -83,6 +108,7 @@ describe('PersonaAspectModal', () => {
     it('should set the aspect', () => {
       let aspect0 = new Aspect('testAspect0', 3);
       let aspect1 = new Aspect('testAspect1', 4);
+      testAspectService.addAspects([aspect0, aspect1]);
 
       component.onAspectSelect(aspect0);
       component['aspect'].should.deep.equal(aspect0);

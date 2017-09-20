@@ -1,5 +1,8 @@
 <div class="persona-aspect">
-    <div class="modal-header">Edit Persona Aspect
+  <div *ngIf="isNew" class="modal-header">Add Persona Aspect
+    <button class="icon modal-exit" (click)="activeModal.close(false)">X</button>
+  </div>
+  <div *ngIf="!isNew" class="modal-header">Edit Persona Aspect
     <button class="icon modal-exit" (click)="activeModal.close(false)">X</button>
   </div>
     <section class="modal-body">
@@ -8,7 +11,7 @@
             <div class="aspect-title">
                 <h3>Aspect</h3>
             </div>
-            <div *ngIf="isNew" class="aspect-item">
+            <div *ngIf="isNew && aspect" class="aspect-item">
                 <div ngbDropdown class="d-inline-block">
                   <button type="button" class="action" id="dropdownMenu1" ngbDropdownToggle><span
                       title="{{aspect.getName()}}">{{aspect.getName()}}</span></button>
@@ -19,8 +22,11 @@
                   </div>
               </div>
             </div>
-            <div *ngIf="!isNew" class="aspect-item">
+            <div *ngIf="!isNew && aspect" class="aspect-item">
                <h3>{{personaAspect.getAspect().getName()}}</h3>
+            </div>
+            <div *ngIf="!aspect" class="aspect-item">
+                <h3>No Aspects to add</h3>
             </div>
         </div>
         <div class="aspect-select">

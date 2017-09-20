@@ -39,6 +39,39 @@ describe('AspectService', () => {
       aspectService['aspects'][2].should.deep.equal(testAspect2);
     });
 
+    it('should add an aspect to the service if new aspect and retain an alphabetised list of aspects', () => {
+      aspectService['aspects'].length.should.be.equal(0);
+
+      let testAspectA = new Aspect('a', 0);
+      let testAspectB = new Aspect('b', 1);
+      let testAspectC = new Aspect('c', 2);
+      let testAspectD = new Aspect('d', 2);
+
+      // Init
+      aspectService['aspects'] = [testAspectB];
+
+      // Add to beginning
+      aspectService.addAspect(testAspectA);
+      aspectService['aspects'].length.should.be.equal(2);
+      aspectService['aspects'][0].should.deep.equal(testAspectA);
+      aspectService['aspects'][1].should.deep.equal(testAspectB);
+
+      // Add to end
+      aspectService.addAspect(testAspectD);
+      aspectService['aspects'].length.should.be.equal(3);
+      aspectService['aspects'][0].should.deep.equal(testAspectA);
+      aspectService['aspects'][1].should.deep.equal(testAspectB);
+      aspectService['aspects'][2].should.deep.equal(testAspectD);
+
+      // Add to middle
+      aspectService.addAspect(testAspectC);
+      aspectService['aspects'].length.should.be.equal(4);
+      aspectService['aspects'][0].should.deep.equal(testAspectA);
+      aspectService['aspects'][1].should.deep.equal(testAspectB);
+      aspectService['aspects'][2].should.deep.equal(testAspectC);
+      aspectService['aspects'][3].should.deep.equal(testAspectD);
+    });
+
     it('should update an existing aspect if present in the service', () => {
       aspectService['aspects'].length.should.be.equal(0);
 

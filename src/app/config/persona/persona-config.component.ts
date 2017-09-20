@@ -71,6 +71,7 @@ export class PersonaConfigComponent {
   addPersonaAspect() {
     let modal = this.modalService.open(PersonaAspectModal);
     modal.componentInstance.isNew = true;
+    modal.componentInstance.existingPersonaAspects = this.selectedPersona.getPersonaAspects();
     modal.result.then((newPersonaAspect: PersonaAspect) => {
       if(newPersonaAspect) {
         this.selectedPersona.addPersonaAspect(newPersonaAspect);

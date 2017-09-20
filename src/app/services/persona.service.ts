@@ -15,7 +15,7 @@ export class PersonaService {
     let b = new PersonaAspect(aspectService.getAspectByName('DemoAspect1'), 5);
     let c = new PersonaAspect(aspectService.getAspectByName('DemoAspect2'), 2);
     let demo = new Persona('DemoPersona');
-    demo.addPersonaAspects([a, b, c]);
+    demo.addPersonaAspects([a, b]);
     this.addPersona(demo);
   }
 

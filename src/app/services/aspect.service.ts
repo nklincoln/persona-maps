@@ -17,16 +17,15 @@ export class AspectService {
       this.updateAspect(aspect);
     } else {
       this.aspects.push(aspect);
+      this.aspects.sort((a, b) => {
+        return a.getName().localeCompare(b.getName());
+      });
     }
   }
 
   addAspects(aspects: Aspect[]) {
     aspects.forEach((aspect) => {
-      if(this.containsAspect(aspect)) {
-        this.updateAspect(aspect);
-      } else {
-        this.aspects.push(aspect);
-      }
+      this.addAspect(aspect);
     });
   }
 

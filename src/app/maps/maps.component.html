@@ -9,14 +9,47 @@
           <span>Export</span>
         </button>
       </div>
+      <div class="legend">
+        <div style="text-align:center;"><b>Confidence Key</b></div>
+          <div class="item">            
+            <div class="Green"></div>
+            <div>&nbsp;Very High</div>    
+          </div>
+          <div class="item">            
+            <div class="LightGreen"></div>
+            <div>&nbsp;High</div>      
+          </div>
+          <div class="item">            
+            <div class="Yellow"></div>
+            <div>&nbsp;Good</div>    
+          </div>
+          <div class="item">            
+            <div class="Orange"></div>
+            <div>&nbsp;Adequate</div>       
+          </div>
+          <div class="item">            
+            <div class="DOrange"></div>
+            <div>&nbsp;Low</div>  
+          </div>
+          <div class="item">            
+            <div class="Red"></div>
+            <div>&nbsp;Very Low</div>    
+          </div>
+          <div class="item">            
+            <div class="Grey"></div>
+            <div>&nbsp;Unknown</div>    
+          </div>            
+      </div>
     </div>
-    <div class="persona-details" *ngFor="let persona of personas; let i= index">
-      <div class="name">{{persona.getName()}}</div>
-      <div *ngIf="mapPersona(i)"class="map">
-        <treemap class="content"
-          [data]="data[i]"
-          [scheme]="scheme[i]">
-        </treemap>
+    <div class="personas">
+      <div class="persona-details" *ngFor="let persona of personas; let i= index">
+        <div class="name">{{persona.getName()}}</div>
+        <div *ngIf="mapPersona(i)"class="map">
+          <treemap class="content"
+            [data]="data[i]"
+            [scheme]="scheme[i]">
+          </treemap>
+        </div>
       </div>
     </div>
 </section>

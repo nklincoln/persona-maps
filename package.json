@@ -76,6 +76,7 @@
     "babel-polyfill": "^6.23.0",
     "babel-preset-latest": "^6.24.1",
     "bootstrap": "^3.3.7",
+    "buffer-loader": "0.0.1",
     "chai": "^3.5.0",
     "copy-webpack-plugin": "^4.0.1",
     "css-loader": "^0.26.0",

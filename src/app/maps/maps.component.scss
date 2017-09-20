@@ -4,39 +4,107 @@
 .container {
   display: flex;
   background: lightgray;
-  flex-wrap: wrap;
 
   .side-options{
     display: flex;
     flex-direction: column;
     padding-right: 0.5rem;
     padding-top: 0.5rem;
+
+
+    .legend {
+      display: flex;
+      flex-direction: column;
+      margin-top: 5rem;
+      
+      .item{
+        display: flex;
+        align-items: center;
+        margin-left: 1rem;
+
+        .Green {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#7CFC00;
+        }
+        .LightGreen {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#ADFF2F;
+        }
+        .Yellow {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#FFFF00;
+        }
+        .Orange {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#FFD700;
+        }
+        .DOrange {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#FF9912;
+        }
+        .Red {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#FF0000;
+        }
+        .Grey {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 50%;
+          margin-top: 0.5rem;
+          background-color:#A6ACAF;
+        } 
+      }   
+    }    
+    
   }
 
-  .persona-details {
+  .personas {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    background: ghostwhite;
-    margin-left: 2rem;
-    margin-top: 2rem;
-    border-radius: 5px;
-
-    .name {
+    flex-wrap: wrap;
+    
+    .persona-details {
       display: flex;
+      flex-direction: column;
       align-items: center;
-      font-size: 20pt;
-    }
+      background: ghostwhite;
+      margin-left: 2rem;
+      margin-top: 2rem;
+      border-radius: 5px;
 
-    .map {
-      display: flex;
-
-      .content {
-        min-height: 30rem;
-        min-width: 30rem;
+      .name {
+        display: flex;
+        align-items: center;
+        font-size: 20pt;
       }
-    }
 
+      .map {
+        display: flex;
+
+        .content {
+          min-height: 30rem;
+          min-width: 30rem;
+        }
+      }
+
+    }
   }
 
 

@@ -66,4 +66,22 @@ export class PersonaService {
       this.personas = [];
   }
 
+  shiftUp(persona: Persona){
+    let currentIndex = this.personas.findIndex((comp) => comp.getName().valueOf() === persona.getName());
+    // permit wrap 
+    let targetIndex = currentIndex == 0 ? this.personas.length : currentIndex - 1;
+    this.shift(currentIndex, targetIndex);
+  }
+
+  shiftDown(persona: Persona){
+    let currentIndex = this.personas.findIndex((comp) => comp.getName().valueOf() === persona.getName());
+    // permit wrap 
+    let targetIndex = currentIndex == (this.personas.length -1) ? 0 : currentIndex + 1;
+    this.shift(currentIndex, targetIndex);
+  }
+
+  shift(currentIndex, targetIndex) {
+    this.personas.splice(targetIndex, 0, this.personas.splice(currentIndex, 1)[0]);
+  }
+  
 }

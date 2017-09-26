@@ -1,18 +1,29 @@
 
 <section class = "data-config">
-
   <div class="item-definition">
     <div class="title">Defined Personas</div>
     <div class="persona-config">
       <div class="personas" *ngFor="let persona of personas">
         <h3>{{ persona.getName() }}</h3>
-        <div>
-          <button type="button" class="secondary" (click)="deletePersona(persona);">
+        <div class="options">
+          <button type="button" class="delete" (click)="deletePersona(persona);">
             <span>Delete</span>
           </button>
           <button type="button" class="secondary" (click)="viewPersona(persona);">
             <span>View</span>
           </button>
+          <div class="shift">
+            <div>
+              <button type="button" class="order" (click)="shiftUp(persona);">
+                <div class="uparrow"></div>
+              </button>
+            </div>
+            <div>
+              <button type="button" class="order" (click)="shiftDown(persona);">
+                  <div class="downarrow"></div>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
       <button type="button" class="primary" (click)="addPersona();">
@@ -27,12 +38,12 @@
         <div class="name">{{personaAspect.getAspect().getName()}}</div>
         <div>{{personaAspect.getWeighting()}}</div>
         <div>
-          <button type="button" class="secondary" (click)="removePersonaAspect(personaAspect);">
+          <button type="button" class="delete" (click)="removePersonaAspect(personaAspect);">
             <span>Delete</span>
           </button>
           <button type="button" class="secondary" (click)="editPersonaAspect(personaAspect);">
             <span>Edit</span>
-          </button>
+          </button>          
         </div>
       </div>
       <button type="button" class="primary" (click)="addPersonaAspect();">

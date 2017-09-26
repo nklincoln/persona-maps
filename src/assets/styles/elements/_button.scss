@@ -89,10 +89,10 @@
         }
 
         &.delete {
-            background-color: $first-warning;
-            color: $white;
-            border-color: $first-warning;
-
+            background-color: $white;
+            color: $first-highlight;
+            border-color: $keyline-highlight;
+            
             &:hover {
                 background-color: $second-warning;
                 border-color: $second-warning;
@@ -113,6 +113,32 @@
             }
         }
 
+        &.order {
+            background-color: $fifth-highlight;
+            color: $white;
+            border-color: $fifth-highlight;
+            line-height: 18px;
+            min-width: 0;
+            
+            &:hover {
+                background-color: $secondary-text;
+                border-color: $secondary-text;
+                color: $white;
+
+            }
+
+            &.active, &:active, &:focus {
+                background-color: $secondary-text;
+                border-color: $secondary-text;
+                color: $white;
+            }
+
+            &[disabled], &[disabled]:hover {
+                border-color: $fifth-highlight;
+                color: $fifth-highlight;
+                background-color: $white;
+            }
+        }
 
         &.expand {
             background-color: $white;

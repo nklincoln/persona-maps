@@ -345,4 +345,36 @@ describe('PersonaConfigComponent', () => {
     }));
   });
 
+  describe('#shiftUp', () => {
+    it('should call the service shiftUp method and re-initialise', () => {
+      let personaSpy = sinon.spy(testPersonaService, 'shiftUp');
+      let initSpy = sinon.spy(component, 'ngOnInit');
+
+      let testPersona = new Persona('bob');
+      testPersonaService.addPersona(testPersona);
+
+      component.shiftUp(testPersona);
+
+      personaSpy.should.have.been.called;
+      initSpy.should.have.been.called;
+    });
+
+  });
+
+  describe('#shiftDown', () => {
+    it('should call the service shiftDown method and re-initialise', () => {
+      let personaSpy = sinon.spy(testPersonaService, 'shiftDown');
+      let initSpy = sinon.spy(component, 'ngOnInit');
+
+      let testPersona = new Persona('bob');
+      testPersonaService.addPersona(testPersona);
+
+      component.shiftDown(testPersona);
+
+      personaSpy.should.have.been.called;
+      initSpy.should.have.been.called;
+    });
+
+  });
+
 });

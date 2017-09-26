@@ -209,4 +209,52 @@ describe('PersonaService', () => {
     });
   });
 
+  describe('#shiftUp', () => {
+    let testPersona0;
+    let testPersona1;
+    let testPersona2;
+
+    beforeEach(() => {
+      testPersona0 = new Persona('bob');
+      testPersona1 = new Persona('sal');
+      testPersona2 = new Persona('ted');
+      personaService['personas'] = [testPersona0, testPersona1, testPersona2];
+    });
+
+    it('should move a persona up through the list', () => {
+      personaService.shiftUp(testPersona2);
+      personaService['personas'].should.deep.equal([testPersona0, testPersona2, testPersona1]);
+    });
+
+    it('should wrap upward motion to the bottom of the list', () => {
+      personaService.shiftUp(testPersona0);
+      personaService['personas'].should.deep.equal([testPersona1, testPersona2, testPersona0]);
+    });
+
+  });
+
+  describe('#shiftDown', () => {
+    let testPersona0;
+    let testPersona1;
+    let testPersona2;
+
+    beforeEach(() => {
+      testPersona0 = new Persona('bob');
+      testPersona1 = new Persona('sal');
+      testPersona2 = new Persona('ted');
+      personaService['personas'] = [testPersona0, testPersona1, testPersona2];
+    });
+
+    it('should move a persona down through the list', () => {
+      personaService.shiftDown(testPersona1);
+      personaService['personas'].should.deep.equal([testPersona0, testPersona2, testPersona1]);
+
+    });
+
+    it('should wrap downward motion to the top of the list', () => {
+      personaService.shiftDown(testPersona2);
+      personaService['personas'].should.deep.equal([testPersona2, testPersona0, testPersona1]);
+    });
+
+  });
 });

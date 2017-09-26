@@ -42,11 +42,35 @@
         align-items: center;
         min-width: 60rem;
 
-        .name {
+        .options {
           display: flex;
           min-width: 10rem;
           margin-left: 4px;
-        }
+
+          .shift {
+            display: flex;
+            flex-direction: column;
+            margin-left: 0.8rem;
+
+            .uparrow {
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              display: inline-block;
+              padding: 3px;
+              transform: rotate(-135deg);
+              -webkit-transform: rotate(-135deg);
+            }
+            
+            .downarrow {
+              border: solid white;
+              border-width: 0 3px 3px 0;
+              display: inline-block;
+              padding: 3px;
+              transform: rotate(45deg);
+              -webkit-transform: rotate(45deg);
+            } 
+          }
+        }        
       }
     }
 

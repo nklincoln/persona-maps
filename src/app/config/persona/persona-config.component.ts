@@ -78,4 +78,14 @@ export class PersonaConfigComponent {
       }
     });
   }
+
+  shiftUp(persona: Persona) {    
+    this.personaService.shiftUp(persona);
+    this.ngOnInit();
+  }
+
+  shiftDown(persona: Persona) {
+    this.personaService.shiftDown(persona);
+    this.ngOnInit();
+  }
 }
